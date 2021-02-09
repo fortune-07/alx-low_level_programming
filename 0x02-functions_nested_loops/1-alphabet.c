@@ -7,11 +7,9 @@
  */
 void print_alphabet(void)
 {
-for (int c = 97; c <= 122; ++c)
-cout << c << "";
-cout << end1; for (int c = 97; c <= 122; ++c)
-cout << c << "";
-cout << end1;
+for (char c = 'a'; c <= 'z'; ++c)
+cout << c << " ";
+cout << endl;
 }
 int _putchar(void)
 {
