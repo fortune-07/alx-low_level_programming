@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include "_putchar.c"
 /**
 * rev_string - code used to reverse a string.
 * @str: holds the value of the string.
