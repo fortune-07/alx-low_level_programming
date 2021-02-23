@@ -4,22 +4,17 @@
 * print_chessboard - function that prints the chessboard.
 * @a: parameter to hold the value of a string.
 *
-* _putchar: void.
+* Return: void.
 */
 void print_chessboard(char (*a)[8])
 {
-unsigned int n, m, len, rows;
-len = 0;
-while (*((*a) + len) != 0)
-len++;
-rows = len / 8;
-
-m = 0;
-while (m < rows)
+int i, j;
+for (i = 0; i <= 7; i++)
 {
-for (n = 0; n < 8; n++)
-_putchar(a[m][n]);
-_putchar('\n');
-m++;
+for (j = 0; j <= 7; j++)
+{
+_putchar(a[i][j]);
+}
+_putchar(10);
 }
 }
