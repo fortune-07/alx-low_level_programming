@@ -11,7 +11,7 @@ void print_chessboard(char (*a)[8])
 unsigned int i, f, len, row;
 
 len = 0;
-while(*((*a) + len) != 0)
+while (*((*a) + len) != 0)
 len++;
 
 row = len / 8;
