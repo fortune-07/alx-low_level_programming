@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include "_putchar.c"
 /**
 * print_chessboard - function that prints the chessboard.
 * @a: parameter to hold the value of a string.
