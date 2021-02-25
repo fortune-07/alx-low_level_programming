@@ -1,15 +1,14 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
-* main - check the code for Holberton School students.
-*
+* _print_rev_recursion - function that prints a string in reverse.
+* @s: holds value of an integer.
 * Return: Always 0.
 */
 void _print_rev_recursion(char *s)
 {
-int i = 0;
-int end = 0;
-if (i >= end)
-return;
-*(s+i) = *(s+end);
+if (*s)
+{
+_print_rev_recursion(s + 1);
+_putchar(*s);
+}
 }
