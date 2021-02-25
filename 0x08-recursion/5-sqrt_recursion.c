@@ -7,28 +7,10 @@
 */
 int _sqrt_recursion(int n)
 {
-int start = 0, end = n;
-int mid;
-
-int ans;
-
-while (start <= end)
-{
-mid = (start + end) / 2;
-if (mid * mid == n)
-{
-ans = mid;
-break;
-}
-if (mid * mid < n)
-{
-start = mid + 1;
-ans = mid;
-}
-else
-{
-end = mid - 1;
-}
-}
-return (ans);
+int i;
+if (i * i > n)
+return (-1);
+if (i * i == n)
+return (i);
+return (_sqrt_recursion(n, i + 1));
 }
