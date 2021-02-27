@@ -8,21 +8,20 @@
 */
 int wildcmp(char *s1, char *s2)
 {
-int i = 0, flag = 0;
-
-while (s1[i] != '\0' && s2[i] != '\0')
-{
-
-if (s1[i] != s2[i])
-{
-flag = 1;
-break;
-}
-i++;
-}
-
-if (flag == 0 && s1[i] == '\0' && s2[i] == '\0')
+if (*s1 == '\0' && *s2 == '\0')
 return (1);
+if (*s1 == *s2)
+return (wildcmp(s1 + 1, s2 + 1));
+if (*s2 == '\0')
+return (0);
+if (*s2 == '*')
+return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
+if (*s1 == '\0')
+{
+if (*s2 != '*')
+return (0);
 else
+return (wildcmp(s1, s2 + 1));
+}
 return (0);
 }
