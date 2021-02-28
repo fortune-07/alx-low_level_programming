@@ -1,23 +1,18 @@
 #include "holberton.h"
 /**
-* _puts - printing a string to console.
-*@str: holds strings value for the program.
-* Return: void.
-*/
+* _puts - prints string
+* @str: input string to print
+* Description: prints string to stdout
+* Return: nothing
+**/
 void _puts(char *str)
 {
-int count = 0;
-int i;
+int i = 0;
 
-for (i = 0;
-str[i] != '\0';
-i++)
-count++;
-
-for (i = 0;
-i < count;
-i++)
+while (str[i] != '\0')
+{
 _putchar(str[i]);
-
+i++;
+}
 _putchar('\n');
 }
