@@ -1,23 +1,27 @@
 #include <stdio.h>
-#include "holberton.h"
 /**
 * main - print the first 50 fibonacci numbers
 * Return: Nothing.
 */
 int main(void)
 {
-int count;
-unsigned long x, y, z;
+long int i, j, k, next;
+j = 1;
+k = 2;
 
-x = 0;
-y = 1;
-
-for (count = 1; count <= 49; count++)
+for (i = 1; i <= 50; ++i)
 {
-z = x + y;
-x = y;
-y = z;
+if (j != 20365011074)
+{
+printf("%ld, ", j);
 }
-printf("%lu\n", z + x);
+else
+{
+printf("%ld\n", j);
+}
+next = j + k;
+j = k;
+k = next;
+}
 return (0);
 }
