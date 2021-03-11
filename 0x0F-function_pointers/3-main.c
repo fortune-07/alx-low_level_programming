@@ -1,36 +1,39 @@
-#include "function_pointers.h"
+#include "3-calc.h"
 /**
-* main -
-* @array: array to operate on
-* @size: size of array
-* @cmp: compare function
-* Return: nothing
-**/
-int main(int ac, char *argv[])
+* main - program that perfroms simple operations
+* @argc: number of arguments
+* @argv: array of arguments
+*
+* Return: Always 0 (Success)
+*/
+int main(int argc, char *argv[])
 {
-int num1, num2;
-char* operator;
+int arg1, arg2, result;
+char o;
+int (*func)(int, int);
 
-if (ac != 4)
+if (argc != 4)
 {
 printf("Error\n");
 exit(98);
 }
-if (argv[3] != '+')
+arg1 = atoi(argv[1]);
+arg2 = atoi(argv[3]);
+func = get_op_func(argv[2]);
+if (!func)
 {
 printf("Error\n");
 exit(99);
 }
-if (atoi(argv[2]) == NULL || atoi(argv[4]) == NULL)
-{
-printf ("Error\n");
-exit();
-}
-num1 = atoi(argv[2]);
-num2 = atoi(argv[4]);
-operator = argv[3];
 
-calc = get_op_func(operator, num1, num2);
-printf("%d\n", calc);
+o = *argv[2];
+
+if ((o == '/' || o == '%') && arg2 == 0)
+{
+printf("Error\n");
+exit(100);
+}
+result = func(arg1, arg2);
+printf("%d\n", result);
 return (0);
 }

@@ -1,28 +1,31 @@
-#include "function_pointers.h"
+#include "3-calc.h"
 /**
-* get_op_func - selects and returns correct function
-* @s: string containing operand
-* Return: pointer to function, NULL if fails
-**/
+* get_op_func - function pointer that selects the correct function to perform
+* the operation asked by the user
+* @s: the operator given by the user
+*
+* Return: pointer to the function that corresponds to the
+* operator given as a parameter
+*/
 int (*get_op_func(char *s))(int, int)
 {
-int i;
 op_t ops[] = {
 {"+", op_add},
 {"-", op_sub},
 {"*", op_mul},
 {"/", op_div},
 {"%", op_mod},
-{NULL, NULL},
+{NULL, NULL}
 };
+int i;
 
-while (i < 6)
+i = 0;
+
+while (ops[i].op)
 {
-if (s == ops[i].op)
-{
-return (*ops[i].f);
-}
+if (strcmp(ops[i].op, s) == 0)
+return (ops[i].f);
 i++;
 }
-return (NULL)
+return (NULL);
 }
