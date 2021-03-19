@@ -9,7 +9,7 @@ main:
 push rbp
 mov rdi,fmt
 mov rsi,msg
-mov rax,0
+mov eax,0
 call printf
 
 pop rbp
