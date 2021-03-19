@@ -13,6 +13,6 @@ return (0);
 printf("[%u] %s\n", h->len, h->str);
 
 if (h->next != NULL)
-return (print_list(NULL) + 1);
+return (print_list(h->next) + 1);
 return (1);
 }
