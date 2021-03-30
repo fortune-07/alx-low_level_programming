@@ -10,6 +10,9 @@
  */
 int main(int ac, char *av[])
 {
-return (1);
+if (ac != 3)
+	{
+		return (1);
+	}
 return (0);
 }
